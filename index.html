@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<meta charshet="utf-8">
+		<link rel="stylesheet" type="text/css" href="checkers.css">
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="scripts/checkers-engine.js"></script>
+
+	</head>
+	<body style="background-color: #E3FAD6">
+	<div >
+		<div>
+			<center style="text-transform: uppercase; color: #4CAF50; font-size: 60px; font-weight: bold">CHECKERS</center>
+			
+			<button class="btnStart btn1" type="submit"  onClick="refreshPage()">New Game</button>
+			<button class="btnStart btn1" type="submit"  onClick="undo(1)">Undo</button>
+			<button id="redo" class="btnStart btn1" type="submit" style="display: none;" onClick="redo()">Redo</button>
+			<button class="btnStart btn1" type="submit"  onClick="writePaper()">write</button>
+			<button id="btnReplay" style="display:none;" onclick="replayAll({x: 0, y: 0}, 60, boardCanvas)">View Replay</button>
+			
+			
+			</div>
+		<div>
+		<svg id="checkersBoard" width="500" height="500"></svg>
+
+		<script type="text/javascript">
+			var boardCanvas = d3.select("#checkersBoard");
+			startGame({x: 0, y: 0}, 60, boardCanvas);
+		</script>
+		</div>
+		
+	</div>
+	<br>
+	<textarea style="margin-left: 150" id="myTextarea" rows="10" cols="50"> </textarea>
+	<br>	
+	</body>
+</htm>
